@@ -751,40 +751,6 @@ ul { list-style: none; }
     .footer-map-container { min-height: 250px; }
     .gallery-section { padding: 50px 16px 40px; }
     .floating-social { display: none; }
-    .floating-book {
-        flex-direction: row;
-        top: auto;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        transform: none;
-        width: 100%;
-        z-index: 10000;
-        gap: 0;
-    }
-    .float-book-btn {
-        flex: 1;
-        flex-direction: row;
-        justify-content: center;
-        padding: 16px 20px;
-        border-radius: 0;
-        gap: 10px;
-        box-shadow: none;
-    }
-    .float-book-btn span {
-        writing-mode: horizontal-tb;
-        transform: none;
-        font-size: 11px;
-        letter-spacing: 2px;
-    }
-    .float-call-btn {
-        flex: 0 0 64px;
-        border-radius: 0;
-        border: none;
-        border-left: 1px solid rgba(197,160,89,0.3);
-        margin-top: 0;
-        padding: 16px;
-    }
 }
 @media (max-width: 480px) {
     .services-grid { grid-template-columns: 1fr; }
