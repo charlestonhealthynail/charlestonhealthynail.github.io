@@ -757,3 +757,6 @@ ul { list-style: none; }
     .hero-title { font-size: 40px; }
     .top-cta { display: none; }
 }
+
+/* Make logo circular */
+.logo-img { border-radius: 50% !important; object-fit: cover; }

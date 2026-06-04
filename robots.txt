@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Help AI agents parse our data
+Allow: /llms.txt
+
+# Sitemap
+Sitemap: https://charlestonhealthynail.github.io/sitemap.xml
