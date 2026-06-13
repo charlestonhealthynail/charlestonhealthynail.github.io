@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Nashua Nails and Spa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            color: #3A3028;
+            background: #F5EDE4;
+            overflow-x: hidden;
+        }
+
+        /* ===== HERO BANNER ===== */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            background: url('banner_slide_1.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(184,160,126, 0.55);
+        }
+
+        .hero-banner h1 {
+            position: relative;
+            z-index: 1;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5EDE4;
+            letter-spacing: 3px;
+        }
+
+        @media (max-width: 850px) {
+            .hero-banner {
+                height: 300px;
+            }
+
+            .hero-banner h1 {
+                font-size: 42px;
+            }
+        }
+
+        /* ===== STICKY BUTTONS ===== */
+        .sticky-buttons {
+            position: fixed;
+            left: 0;
+            bottom: 50%;
+            transform: translateY(50%);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+
+        .sticky-buttons a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #1A0A0A;
+            color: #C9B896;
+            text-decoration: none;
+            padding: 7px 15px;
+            font-size: 16px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            width: max-content;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, padding-left 0.3s;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .sticky-buttons a:hover {
+            background: #3A1515;
+            padding-left: 20px;
+        }
+
+        .sticky-buttons a svg {
+            width: 18px;
+            height: 18px;
+            fill: #C9B896;
+            flex-shrink: 0;
+        }
+
+        /* ===== SERVICE SECTION ===== */
+        .service-section {
+            padding: 60px 40px;
+            background: #F5EDE4;
+            scroll-margin-top: 100px;
+        }
+
+        .service-section:nth-child(even) {
+            background: #EFE6DB;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        /* ===== SECTION IMAGE ===== */
+        .img-circle-wrap {
+            width: 300px !important;
+            height: 300px !important;
+            border-radius: 50% !important;
+            overflow: hidden !important;
+            display: block !important;
+            box-shadow: 0 8px 30px rgba(139, 26, 26, 0.12) !important;
+            flex-shrink: 0 !important;
+        }
+
+        .img-circle-wrap img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            border-radius: 0 !important;
+            display: block !important;
+        }
+
+        /* ===== IMAGE STACK ===== */
+        .img-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        /* ===== SECTION CONTENT ===== */
+        .section-content {
+            padding-top: 10px;
+        }
+
+        .section-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+            font-weight: 500;
+            color: #3A3028;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        /* ===== PRICE LIST ===== */
+        .price-list {
+            width: 100%;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(139, 26, 26, 0.06);
+        }
+
+        .price-item:last-child {
+            border-bottom: none;
+        }
+
+        .price-item .name {
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #3A3028;
+        }
+
+        .price-item .dots {
+            flex: 1;
+            border-bottom: 1px dotted rgba(139, 26, 26, 0.18);
+            margin: 0 12px;
+            min-width: 20px;
+            position: relative;
+            top: -4px;
+        }
+
+        .price-item .price {
+            font-size: 15px;
+            font-weight: 500;
+            color: #8B1A1A;
+            white-space: nowrap;
+        }
+
+        .price-item .cash {
+            font-size: 12px;
+            font-weight: 300;
+            color: #7A6A5A;
+            margin-left: 6px;
+        }
+
+        /* ===== TABLE STYLE ===== */
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        .service-table th {
+            padding: 10px 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+            font-size: 12px;
+            color: #8B1A1A;
+            border-bottom: 2px solid rgba(139, 26, 26, 0.15);
+            text-align: left;
+        }
+
+        .service-table th:not(:first-child) {
+            text-align: right;
+        }
+
+        .service-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(139, 26, 26, 0.06);
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-table td:not(:first-child) {
+            text-align: right;
+            font-weight: 500;
+            color: #8B1A1A;
+        }
+
+        .service-table .cash-col {
+            font-weight: 300 !important;
+            color: #7A6A5A !important;
+            font-size: 12px !important;
+        }
+
+        /* ===== SUB HEADING ===== */
+        .sub-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 24px;
+            font-weight: 500;
+            color: #8B1A1A;
+            margin: 30px 0 15px;
+            font-style: italic;
+        }
+
+        /* ===== SIGNATURE TAG ===== */
+        .sig {
+            display: inline-block;
+            font-family: 'Jost', sans-serif;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #8B1A1A;
+            border: 1px solid rgba(139, 26, 26, 0.3);
+            border-radius: 3px;
+            padding: 2px 7px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* ===== DESCRIPTION TEXT ===== */
+        .desc-text {
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #5A5048;
+            margin-bottom: 5px;
+        }
+
+        .desc-list {
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 2;
+            color: #5A5048;
+            margin: 5px 0 8px 20px;
+            list-style: disc;
+        }
+
+        /* ===== STEPS BOX ===== */
+        .steps-box {
+            background: rgba(184, 160, 126, 0.1);
+            border: 1px solid rgba(184, 160, 126, 0.25);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin: 10px 0 15px;
+        }
+
+        .steps-box .step {
+            font-size: 12.5px;
+            font-weight: 300;
+            color: #5A5048;
+            margin-bottom: 0.25rem;
+            line-height: 1.6;
+        }
+
+        .steps-box .step strong {
+            font-weight: 500;
+            color: #3A3028;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 850px) {
+            .section-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .img-circle-wrap {
+                width: 250px !important;
+                height: 250px !important;
+                margin: 0 auto !important;
+            }
+
+            .service-section {
+                padding: 40px 20px;
+            }
+
+            .section-content h2 {
+                font-size: 32px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================== STICKY BUTTONS ==================== -->
+    <div class="sticky-buttons">
+        <a href="tel:8548587777" title="Call Us">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.1.31.03.66-.25 1.01l-2.2 2.21z" />
+            </svg>
+            (854) 858-7777
+        </a>
+    </div>
+
+    <!-- ==================== HERO BANNER ==================== -->
+    <div class="hero-banner">
+        <h1>Service Menu</h1>
+    </div>
+
+
+    <!-- ==================== MANICURES ==================== -->
+    <div id="manicures" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="builder_gel_1.webp"
+                    alt="Manicures">
+            </div>
+            <div class="section-content">
+                <h2>Manicures</h2>
+
+                <div class="price-list">
+                    <div class="price-item">
+                        <span class="name">Regular Manicure / with Gel (25-40 min)</span>
+                        <span class="dots"></span>
+                        <span class="price">$25.50 / $40.80 <span class="cash">(Cash $25/$40)</span></span>
+                    </div>
+                    <div class="price-item">
+                        <span class="name">Add French</span>
+                        <span class="dots"></span>
+                        <span class="price">$7.14 <span class="cash">(Cash $7)</span></span>
+                    </div>
+                </div>
+
+                <div class="price-list" style="margin-top: 20px;">
+                    <div class="price-item">
+                        <span class="name">Organic Exfoliating Manicure (25-40 min) <span
+                                class="sig">Signature</span></span>
+                        <span class="dots"></span>
+                        <span class="price">$30.60 / $45.90 <span class="cash">(Cash $30/$45)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Nail trimming, shaping, cuticle detailing and polish of your choice. With gel
+                    option available. A warm, gentle scrub is massaged to exfoliate your skin, revealing radiant hands.
+                </p>
+
+                <div class="price-list" style="margin-top: 20px;">
+                    <div class="price-item">
+                        <span class="name">Deluxe Manicure (40 min) <span class="sig">Signature</span></span>
+                        <span class="dots"></span>
+                        <span class="price">$40.80 / $56.10 <span class="cash">(Cash $40/$55)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">With gel option available for manicure and up. Includes a dip in warm, deeply
+                    nourishing wax for supple, softer, smoother, and more toned looking skin.</p>
+
+                <div class="price-list" style="margin-top: 20px;">
+                    <div class="price-item">
+                        <span class="name">Dazzle Dry Manicure (30 min)</span>
+                        <span class="dots"></span>
+                        <span class="price">$35.70 <span class="cash">(Cash $35)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Dries completely in just 5 minutes, non-toxic, lasts 7-10 days without damaging
+                    natural nails. Hot removal is quick &amp; easy &mdash; no soaking or wrapping needed.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== DIPPING POWDER ==================== -->
+    <div id="dipping-powder" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="builder_gel_2.webp"
+                    alt="Dipping Powder">
+            </div>
+            <div class="section-content">
+                <h2>Dipping Powder</h2>
+                <p class="desc-text" style="margin-bottom: 20px;">Not gel, not acrylic. Odor free, healthy for your
+                    nails with Vitamin E &amp; Calcium. No liquid or UV light needed.</p>
+
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Color Dipping Powder</span><span
+                            class="dots"></span><span class="price">$51 <span class="cash">(Cash $50)</span></span>
+                    </div>
+                    <div class="price-item"><span class="name">Color Dipping Powder Fullset</span><span
+                            class="dots"></span><span class="price">$61.20 <span class="cash">(Cash $60)</span></span>
+                    </div>
+                    <div class="price-item"><span class="name">Add French</span><span class="dots"></span><span
+                            class="price">$10.20 <span class="cash">(Cash $10)</span></span></div>
+                    <div class="price-item"><span class="name">Add Ombre</span><span class="dots"></span><span
+                            class="price">$10.20 <span class="cash">(Cash $10)</span></span></div>
+                    <div class="price-item"><span class="name">Add Length</span><span class="dots"></span><span
+                            class="price">$5.10+ <span class="cash">(Cash $5+)</span></span></div>
+                    <div class="price-item"><span class="name">Design</span><span class="dots"></span><span
+                            class="price">$10.20+ <span class="cash">(Cash $10+)</span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== PEDICURES ==================== -->
+    <div id="pedicures" class="service-section">
+        <div class="section-inner">
+            <div class="img-stack">
+                <div class="img-circle-wrap">
+                    <img src="IMG_0181.jpg"
+                        alt="Pedicures">
+                </div>
+                <div class="img-circle-wrap">
+                    <img src="IMG_0182.jpg"
+                        alt="Pedicures">
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Pedicures</h2>
+
+                <div class="price-list">
+                    <div class="price-item">
+                        <span class="name">Regular Pedicure (30-35 min)</span>
+                        <span class="dots"></span>
+                        <span class="price">$45.90 <span class="cash">(Cash $45)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Warm sea salt foot soak, cuticle treatment, nail shaping, buffing, callus removal,
+                    exfoliating sugar scrub, soothing lotion massage, hot towel wrap, finished with polish of your
+                    choice.</p>
+                <p class="desc-text" style="margin-top: 5px; color: #8B1A1A; font-weight: 600; font-size: 15px;">*
+                    Regular Pedicure includes callus removal</p>
+
+                <h3 class="sub-heading">Pedicure Add-Ons</h3>
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Last Long Gel Color</span><span class="dots"></span><span
+                            class="price">$10.20 <span class="cash">(Cash $10)</span></span></div>
+                    <div class="price-item"><span class="name">Dazzle Color</span><span class="dots"></span><span
+                            class="price">$5.10 <span class="cash">(Cash $5)</span></span></div>
+                </div>
+
+                <div class="price-list" style="margin-top: 25px;">
+                    <div class="price-item">
+                        <span class="name">Deluxe Pedicure (45 min) <span class="sig">Signature</span></span>
+                        <span class="dots"></span>
+                        <span class="price">$53.40 <span class="cash">(Cash $52)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Organic Pedicure &mdash; The ultimate 4-step pedicure system from Voesh &amp; New
+                    York.</p>
+                <ul class="desc-list">
+                    <li>Sea salt scrub &mdash; detox skin, remove calluses</li>
+                    <li>Sugar scrub &mdash; exfoliate feet</li>
+                    <li>Mud masque &mdash; nourish with raphid towel</li>
+                    <li>Massage butter &mdash; moisturize and improve circulation</li>
+                </ul>
+
+                <div class="price-list" style="margin-top: 25px;">
+                    <div class="price-item">
+                        <span class="name">Collagen Pedicure (55 min) <span class="sig">Signature</span></span>
+                        <span class="dots"></span>
+                        <span class="price">$66.30 <span class="cash">(Cash $65)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Luxury treatment for tired and achy feet. Beyond collagen spa with disposable
+                    pedicure kit, 6 steps plus warm paraffin wax. Detoxify, exfoliate, cleanse and nourish for hydrated
+                    healthy feet.</p>
+
+                <div class="price-list" style="margin-top: 25px;">
+                    <div class="price-item">
+                        <span class="name">VIP Pedicure (70 min)</span>
+                        <span class="dots"></span>
+                        <span class="price">$81.60 <span class="cash">(Cash $80)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Luxurious royal massage candle enriches skin with all natural, plant-based
+                    ingredients plus warm paraffin wax.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== NAIL ENHANCEMENTS ==================== -->
+    <div id="nail-enhancements" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="IMG_0184.jpg"
+                    alt="Nail Enhancements">
+            </div>
+            <div class="section-content">
+                <h2>Nail Enhancements</h2>
+
+                <h3 class="sub-heading">Acrylic (with Gel)</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Cash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fullset Acrylic</td>
+                            <td>$56.10</td>
+                            <td class="cash-col">$55</td>
+                        </tr>
+                        <tr>
+                            <td>Pink &amp; White Fullset</td>
+                            <td>$66.30+</td>
+                            <td class="cash-col">$65+</td>
+                        </tr>
+                        <tr>
+                            <td>Add Length</td>
+                            <td>$5.10+</td>
+                            <td class="cash-col">$5+</td>
+                        </tr>
+                        <tr>
+                            <td>Refill</td>
+                            <td>$56.10+</td>
+                            <td class="cash-col">$55+</td>
+                        </tr>
+                        <tr>
+                            <td>Add French</td>
+                            <td>$10.20</td>
+                            <td class="cash-col">$10</td>
+                        </tr>
+                        <tr>
+                            <td>Pink Fill</td>
+                            <td>$45.90</td>
+                            <td class="cash-col">$45</td>
+                        </tr>
+                        <tr>
+                            <td>Ombre</td>
+                            <td>$10.20</td>
+                            <td class="cash-col">$10</td>
+                        </tr>
+                        <tr>
+                            <td>Special Shape</td>
+                            <td>$5.10+</td>
+                            <td class="cash-col">$5+</td>
+                        </tr>
+                        <tr>
+                            <td>Fill in with Gel</td>
+                            <td>$45.90+</td>
+                            <td class="cash-col">$45+</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="sub-heading">Gel-X Fullset</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Cash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fullset Liquid Gel</td>
+                            <td>$66.30</td>
+                            <td class="cash-col">$65</td>
+                        </tr>
+                        <tr>
+                            <td>Gel-X Fill</td>
+                            <td>$56.10</td>
+                            <td class="cash-col">$55</td>
+                        </tr>
+                        <tr>
+                            <td>Refill</td>
+                            <td>$56.10</td>
+                            <td class="cash-col">$55</td>
+                        </tr>
+                        <tr>
+                            <td>Length / Special Shape</td>
+                            <td>$5.10+</td>
+                            <td class="cash-col">$5+</td>
+                        </tr>
+                        <tr>
+                            <td>French</td>
+                            <td>$10.20</td>
+                            <td class="cash-col">$10</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="sub-heading">Top Hybrid Gel <span class="sig">Signature</span></h3>
+                <p class="desc-text" style="margin-bottom: 15px;">Breakthrough nail enhancement &mdash; overlay or
+                    sculpt a full set. Strong, flexible, odor-free, non-toxic, eco-friendly.</p>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Cash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fullset</td>
+                            <td>$66.30</td>
+                            <td class="cash-col">$65</td>
+                        </tr>
+                        <tr>
+                            <td>Refill</td>
+                            <td>$56.10</td>
+                            <td class="cash-col">$55</td>
+                        </tr>
+                        <tr>
+                            <td>Natural Pink &amp; White Ombre</td>
+                            <td>$76.50</td>
+                            <td class="cash-col">$75</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== LASHES & BROWS ==================== -->
+    <div id="lashes-brows" class="service-section">
+        <div class="section-inner">
+            <div class="img-stack">
+                <div class="img-circle-wrap">
+                    <img src="IMG_0185.jpg"
+                        alt="Lashes">
+                </div>
+                <div class="img-circle-wrap">
+                    <img src="IMG_0186.jpg"
+                        alt="Brows">
+                </div>
+            </div>
+            <div class="section-content">
+                <h2>Lashes &amp; Brows</h2>
+
+                <h3 class="sub-heading">Cluster</h3>
+                <p class="desc-text" style="margin-bottom: 10px;">Great for short time events, not semi-permanent.
+                    Lashes attach to multiple natural lashes. No refill necessary.</p>
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Cluster</span><span class="dots"></span><span
+                            class="price">$76.50 <span class="cash">(Cash $75)</span></span></div>
+                </div>
+
+                <h3 class="sub-heading">Full Set Classic</h3>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Cash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Full Set</td>
+                            <td>$122.40</td>
+                            <td class="cash-col">$120</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 2 Week</td>
+                            <td>$55.20</td>
+                            <td class="cash-col">$55</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 3 Week</td>
+                            <td>$66.30</td>
+                            <td class="cash-col">$65</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 4 Week</td>
+                            <td>$81.60</td>
+                            <td class="cash-col">$80</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="sub-heading">Hybrid <span class="sig">Signature</span></h3>
+                <p class="desc-text" style="margin-bottom: 10px;">Combines classic and volume. Fuller than classic while
+                    maintaining a natural look.</p>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Cash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Full Set</td>
+                            <td>$142.80</td>
+                            <td class="cash-col">$140</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 2 Week</td>
+                            <td>$66.30</td>
+                            <td class="cash-col">$65</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 3 Week</td>
+                            <td>$76.56</td>
+                            <td class="cash-col">$75</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 4 Week</td>
+                            <td>$91.80</td>
+                            <td class="cash-col">$90</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="sub-heading">Volume <span class="sig">Signature</span></h3>
+                <p class="desc-text" style="margin-bottom: 10px;">Fuller, flatter look. 2-8 ultra fine extensions fanned
+                    out per natural lash. Perfect for sparse lashes or gaps.</p>
+                <table class="service-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Price</th>
+                            <th>Cash</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Full Set</td>
+                            <td>$183.60</td>
+                            <td class="cash-col">$180</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 2 Week</td>
+                            <td>$76.50</td>
+                            <td class="cash-col">$75</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 3 Week</td>
+                            <td>$86.70</td>
+                            <td class="cash-col">$85</td>
+                        </tr>
+                        <tr>
+                            <td>Refill 4 Week</td>
+                            <td>$120</td>
+                            <td class="cash-col">$100</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 class="sub-heading">Brow Services</h3>
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Lash Lift &amp; Tint</span><span
+                            class="dots"></span><span class="price">$81.60 <span class="cash">(Cash $80)</span></span>
+                    </div>
+                    <div class="price-item"><span class="name">Brow Tinting</span><span class="dots"></span><span
+                            class="price">$35.70 <span class="cash">(Cash $35)</span></span></div>
+                    <div class="price-item"><span class="name">Brow Lamination</span><span class="dots"></span><span
+                            class="price">$80.58 <span class="cash">(Cash $79)</span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== WAXING ==================== -->
+    <div id="waxing" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="IMG_0949 copy.png"
+                    alt="Waxing">
+            </div>
+            <div class="section-content">
+                <h2>Waxing</h2>
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Eyebrows</span><span class="dots"></span><span
+                            class="price">$15.30 <span class="cash">(Cash $15)</span></span></div>
+                    <div class="price-item"><span class="name">Lip</span><span class="dots"></span><span
+                            class="price">$8.16 <span class="cash">(Cash $8)</span></span></div>
+                    <div class="price-item"><span class="name">Chin</span><span class="dots"></span><span
+                            class="price">$10.20 <span class="cash">(Cash $10)</span></span></div>
+                    <div class="price-item"><span class="name">Full Face</span><span class="dots"></span><span
+                            class="price">$40.80 <span class="cash">(Cash $40)</span></span></div>
+                    <div class="price-item"><span class="name">Side Burn</span><span class="dots"></span><span
+                            class="price">$15.30 <span class="cash">(Cash $15)</span></span></div>
+                    <div class="price-item"><span class="name">Chest</span><span class="dots"></span><span
+                            class="price">$45.90+ <span class="cash">(Cash $45+)</span></span></div>
+                    <div class="price-item"><span class="name">Bikini</span><span class="dots"></span><span
+                            class="price">$30.60+ <span class="cash">(Cash $30+)</span></span></div>
+                    <div class="price-item"><span class="name">Brazilian</span><span class="dots"></span><span
+                            class="price">$51+ <span class="cash">(Cash $50+)</span></span></div>
+                    <div class="price-item"><span class="name">Full Legs</span><span class="dots"></span><span
+                            class="price">$51+ <span class="cash">(Cash $50+)</span></span></div>
+                    <div class="price-item"><span class="name">Half Legs</span><span class="dots"></span><span
+                            class="price">$30.60+ <span class="cash">(Cash $30+)</span></span></div>
+                    <div class="price-item"><span class="name">Under Arms</span><span class="dots"></span><span
+                            class="price">$25.50+ <span class="cash">(Cash $25+)</span></span></div>
+                    <div class="price-item"><span class="name">Lower Arms</span><span class="dots"></span><span
+                            class="price">$30.60+ <span class="cash">(Cash $30+)</span></span></div>
+                    <div class="price-item"><span class="name">Full Arms</span><span class="dots"></span><span
+                            class="price">$45.90+ <span class="cash">(Cash $45+)</span></span></div>
+                    <div class="price-item"><span class="name">Back</span><span class="dots"></span><span
+                            class="price">$51+ <span class="cash">(Cash $50+)</span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== FACIALS ==================== -->
+    <div id="facials" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="builder_gel_4.jpg"
+                    alt="Facials">
+            </div>
+            <div class="section-content">
+                <h2>Facials</h2>
+                <p class="desc-text" style="margin-bottom: 20px;">Avoid heavy makeup, sunburn, exfoliation 24 hours
+                    before. Stay hydrated, avoid caffeine. Wait 4-6 hours after facial before applying makeup.</p>
+
+                <div class="price-list">
+                    <div class="price-item">
+                        <span class="name">Express Facial (30 min)</span>
+                        <span class="dots"></span>
+                        <span class="price">$45.90 <span class="cash">(Cash $45)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Quick consult, cleanse, exfoliation, light massage, targeted mask,
+                    serum/moisturizer. Unclogs pores, improves texture, immediate healthy glow.</p>
+
+                <div class="price-list" style="margin-top: 25px;">
+                    <div class="price-item">
+                        <span class="name">Standard / Classic Facial (60 min)</span>
+                        <span class="dots"></span>
+                        <span class="price">$81.60 <span class="cash">(Cash $80)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Deep cleansing, steam, extractions, massage, mask, serum/moisturizer. Improved
+                    texture, reduced acne, brighter complexion. Minimizes fine lines, unclogs pores.</p>
+
+                <div class="price-list" style="margin-top: 25px;">
+                    <div class="price-item">
+                        <span class="name">Deluxe / Advanced Facial (60 min) <span class="sig">Signature</span></span>
+                        <span class="dots"></span>
+                        <span class="price">$91.80 <span class="cash">(Cash $90)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Double cleanse, exfoliation/microdermabrasion, acid peel, extraction, infusion,
+                    facial massage, specialty mask, LED therapy. Removes dead skin, reduces fine lines &amp; wrinkles,
+                    evens skin tone, lifts and firms.</p>
+
+                <div class="price-list" style="margin-top: 25px;">
+                    <div class="price-item">
+                        <span class="name">Deluxe Hydrafacial</span>
+                        <span class="dots"></span>
+                        <span class="price">$122.40 <span class="cash">(Cash $120)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">Standard cleansing, exfoliation, vortex-suction extraction plus targeted booster
+                    serum and LED therapy. Addresses fine lines, wrinkles, acne, hyperpigmentation.</p>
+
+                <div class="price-list" style="margin-top: 25px;">
+                    <div class="price-item">
+                        <span class="name">Platinum / Ultimate Hydrafacial (70 min) <span
+                                class="sig">Signature</span></span>
+                        <span class="dots"></span>
+                        <span class="price">$173.40 <span class="cash">(Cash $170)</span></span>
+                    </div>
+                </div>
+                <p class="desc-text">7 Steps: Lymphatic drainage, cleansing &amp; exfoliation, acid peel, extraction,
+                    boost, fusion &amp; LED therapy. Stimulates collagen, reduces wrinkles, kills acne, removes
+                    blackheads, refines pores.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== PERMANENT MAKEUP ==================== -->
+    <div id="permanent-makeup" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="builder_gel_5.avif"
+                    alt="Permanent Makeup">
+            </div>
+            <div class="section-content">
+                <h2>Permanent Makeup</h2>
+                <p class="desc-text" style="margin-bottom: 20px;">By Appointment Only &mdash; Call Sophia</p>
+
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Microblading (Eyebrow Tattoo)</span><span
+                            class="dots"></span><span class="price">$459+ <span class="cash">(Cash $450+)</span></span>
+                    </div>
+                    <div class="price-item"><span class="name">Touch Up</span><span class="dots"></span><span
+                            class="price">$204+ <span class="cash">(Cash $200+)</span></span></div>
+                    <div class="price-item"><span class="name">Eyeliner</span><span class="dots"></span><span
+                            class="price">$250+ <span class="cash">(Cash $250+)</span></span></div>
+                    <div class="price-item"><span class="name">Lip Blush</span><span class="dots"></span><span
+                            class="price">$357+ <span class="cash">(Cash $350+)</span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== ADDITIONAL SERVICES ==================== -->
+    <div id="additional" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="builder_gel_3.jpeg"
+                    alt="Additional Services">
+            </div>
+            <div class="section-content">
+                <h2>Additional Services</h2>
+
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Take Off Acrylic, UV, Dip</span><span
+                            class="dots"></span><span class="price">$15.30 <span class="cash">(Cash $15)</span></span>
+                    </div>
+                    <div class="price-item"><span class="name">Take Off Gel</span><span class="dots"></span><span
+                            class="price">$10.20 <span class="cash">(Cash $10)</span></span></div>
+                    <div class="price-item"><span class="name">Nail Polish Change (Regular / Gel)</span><span
+                            class="dots"></span><span class="price">$15.30 / $25.50 <span class="cash">(Cash
+                                $15/$25)</span></span></div>
+                    <div class="price-item"><span class="name">Toes Polish Change (Regular / Gel)</span><span
+                            class="dots"></span><span class="price">$20.40 / $30.50 <span class="cash">(Cash
+                                $20/$30)</span></span></div>
+                    <div class="price-item"><span class="name">Nails Fix</span><span class="dots"></span><span
+                            class="price">$5.10 <span class="cash">(Cash $5)</span></span></div>
+                    <div class="price-item"><span class="name">Cuticle Cut</span><span class="dots"></span><span
+                            class="price">$10.50 <span class="cash">(Cash $10)</span></span></div>
+                    <div class="price-item"><span class="name">Nails Art</span><span class="dots"></span><span
+                            class="price">$10.20+ <span class="cash">(Cash $10+)</span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ==================== LITTLE ANGEL ==================== -->
+    <div id="little-angel" class="service-section">
+        <div class="section-inner">
+            <div class="img-circle-wrap">
+                <img src="IMG_0181.jpg"
+                    alt="Little Angel">
+            </div>
+            <div class="section-content">
+                <h2>Little Angel</h2>
+                <p class="desc-text" style="margin-bottom: 20px;">10 years old &amp; under</p>
+
+                <div class="price-list">
+                    <div class="price-item"><span class="name">Manicure</span><span class="dots"></span><span
+                            class="price">$12.24 <span class="cash">(Cash $12)</span></span></div>
+                    <div class="price-item"><span class="name">2 Nails Design</span><span class="dots"></span><span
+                            class="price">$6.12 <span class="cash">(Cash $6)</span></span></div>
+                    <div class="price-item"><span class="name">Pedicure</span><span class="dots"></span><span
+                            class="price">$23.46 <span class="cash">(Cash $23)</span></span></div>
+                    <div class="price-item"><span class="name">2 Nails Design</span><span class="dots"></span><span
+                            class="price">$6.12 <span class="cash">(Cash $6)</span></span></div>
+                    <div class="price-item"><span class="name">Polish Change (Hand / Toes)</span><span
+                            class="dots"></span><span class="price">$7.14 / $10.20 <span class="cash">(Cash
+                                $7/$10)</span></span></div>
+                    <div class="price-item"><span class="name">Add Gel Color</span><span class="dots"></span><span
+                            class="price">$10.20 <span class="cash">(Cash $10)</span></span></div>
+                    <div class="price-item"><span class="name">Add French</span><span class="dots"></span><span
+                            class="price">$7.14 <span class="cash">(Cash $7)</span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
