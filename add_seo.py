@@ -47,7 +47,7 @@ for filepath in html_files:
         "@type": "PostalAddress",
         "streetAddress": "1220 Ben Sawyer Blvd Suite S",
         "addressLocality": "Mt Pleasant",
-        "addressRegion": "CA",
+        "addressRegion": "SC",
         "postalCode": "29464",
         "addressCountry": "US"
       }},
@@ -55,7 +55,7 @@ for filepath in html_files:
         {{
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:30",
+          "opens": "09:00",
           "closes": "19:00"
         }},
         {{
@@ -63,12 +63,6 @@ for filepath in html_files:
           "dayOfWeek": "Saturday",
           "opens": "09:00",
           "closes": "18:00"
-        }},
-        {{
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "10:00",
-          "closes": "17:00"
         }}
       ]
     }}
